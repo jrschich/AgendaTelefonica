@@ -1,0 +1,97 @@
+﻿@model AgendaTelefonica.Models.Agenda
+
+@{
+    ViewBag.Title = "Detalhes do Contato";
+}
+
+<h2>Detalhes do Contato</h2>
+
+<div>
+    <h4>Contato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nome:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            Empresa:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa)
+        </dd>
+
+        <dt>
+            Endereço:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            Telefone Residencial:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneCasa)
+        </dd>
+
+        <dt>
+            Telefone Comercial:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneTrabalho)
+        </dd>
+
+        <dt>
+            Telefone Celular:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneCelular)
+        </dd>
+
+        <dt>
+            Outro Telefone:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneOutro)
+        </dd>
+
+        <dt>
+            E-mail Particular:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailParticular)
+        </dd>
+
+        <dt>
+            E-mail Comercial:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailTrabalho)
+        </dd>
+
+        <dt>
+            Outro E-mail:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailOutro)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Editar", new { id = Model.Id }) |
+    @Html.ActionLink("Retornar para a lista", "Index")
+</p>

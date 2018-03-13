@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AgendaTelefonica.Models.Agenda>
+
+@{
+    ViewBag.Title = "Lista de Contatos";
+}
+
+<h2>Lista de Contatos</h2>
+
+<p>
+    @Html.ActionLink("Novo Contato", "Novo")
+</p>
+
+<div class="alert-info">
+    @ViewBag.msg
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Empresa
+        </th>
+        <th>
+            Telefone
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonePrincipal)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailPrincipal)
+        </td>        
+        <td>
+            @Html.ActionLink("Alterar", "Editar", new { id=item.Id }) |
+            @Html.ActionLink("Visualizar", "Visualizar", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
